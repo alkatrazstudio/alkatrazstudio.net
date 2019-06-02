@@ -1,0 +1,10 @@
+# redirect URLs from the old site
+/main                        /
+/projects                    /
+/projects/wifiidletimeout    /projects/wifi-idle-timeout
+/projects/mesonplayer        /projects/meson-player
+/projects/volstep            /projects/volume-step-adjuster
+/projects/stealthplayer      /projects/stealth-player
+/projects/worktimelogger     /projects/work-time-logger
+/projects/dqe                /projects/dizzy-quest-editor
+/projects/kingdom3           /projects/kingdom-3

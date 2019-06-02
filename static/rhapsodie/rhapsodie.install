@@ -1,0 +1,9 @@
+[install]
+catalogues = extras-testing
+package = rhapsodie
+
+[extras-testing]
+name = Maemo.org Extras Testing
+dist = fremantle
+uri = http://repository.maemo.org/extras-testing
+components = free non-free

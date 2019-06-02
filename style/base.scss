@@ -1,0 +1,43 @@
+@import "inc";
+
+@font-face {
+    // https://zx-pk.ru/threads/14785-russkij-ttf-shrift-kak-na-spektrume.html?p=348597&viewfull=1#post348597
+    font-family: "ZXSpectrum7";
+    src: url("../fonts/ZXSpectrum.ttf");
+}
+
+html {
+    font-size: 14pt;
+}
+
+body {
+    background: $mainBg;
+    color: $mainFg;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+
+    &, &:visited {
+        color: $blue;
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+        color: $green;
+    }
+}
+
+ul {
+    padding-left: 3ch;
+
+    &.hooper-track {
+        padding-left: 0;
+    }
+}

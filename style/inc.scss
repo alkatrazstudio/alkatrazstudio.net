@@ -1,0 +1,43 @@
+// ZX Spectrum palette
+$black: #000000;
+$blue: #0000C0;
+$red: #C00000;
+$magenta: #C000C0;
+$green: #00C000;
+$cyan: #00C0C0;
+$yellow: #C0C000;
+$white: #C0C0C0;
+
+$blackBright: #000000;
+$blueBright: #0000FF;
+$redBright: #FF0000;
+$magentaBright: #FF00FF;
+$greenBright: #00FF00;
+$cyanBright: #00FFFF;
+$yellowBright: #FFFF00;
+$whiteBright: #FFFFFF;
+
+$mainBg: $white;
+$mainFg: $black;
+
+
+// fonts
+
+@mixin font-setting {
+    &.font-zx {
+        font-family: 'ZXSpectrum7';
+    }
+
+    &.font-mono {
+        font-family: monospace;
+    }
+
+    &.font-sans {
+        font-family: sans-serif;
+    }
+
+    &.font-serif {
+        font-family: serif;
+    }
+}
+
