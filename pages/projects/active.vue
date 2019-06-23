@@ -8,6 +8,10 @@ import {MenuItem} from '~/mixins/menu'
 
 export function menuItems(): MenuItem[] {
     return [{
+        to: '/projects/gpu-fan-meister',
+        title: 'GPU Fan Meister',
+        desc: 'Control your video card fan speed with simple and/or advanced methods'
+    }, {
         to: '/projects/meson-player',
         title: 'Meson Player',
         desc: 'Music player with no GUI, controlled only by global hotkeys'
