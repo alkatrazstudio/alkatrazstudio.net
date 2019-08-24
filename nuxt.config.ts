@@ -57,7 +57,11 @@ const config: NuxtConfiguration = {
 
     server: {
         host: '0.0.0.0'
-    }
+    },
+
+    buildModules: [
+        '@nuxt/typescript-build'
+    ]
 }
 
 export default config
