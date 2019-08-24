@@ -3,7 +3,7 @@
     homepage="https://gitlab.com/alkatrazstudio/gottext"
 >
 <p>
-    GotText is a translation engine for PHP 7 and PHP 5.
+    GotText is a translation engine for PHP 7.
     It can be used instead of gettext, but it's not a drop-in replacement.
     The main goal of this project is to build a translation engine
     with gettext features but without any gettext shortcomings.
