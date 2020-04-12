@@ -32,7 +32,6 @@
 
 <script lang="ts">
 import {Component, Prop, mixins} from 'nuxt-property-decorator'
-import 'swiper/dist/css/swiper.css'
 import Page from '~/mixins/page'
 
 export interface File {
@@ -148,8 +147,7 @@ export default class extends mixins(Page) {
             background: none;
             color: $cyan;
 
-            &:before {
-                transform: translateX(-50%) translateY(-50%);
+            &:after {
                 display: inline-block;
                 font-size: 2rem;
                 line-height: 100%;
@@ -164,7 +162,7 @@ export default class extends mixins(Page) {
                 padding: 3rem 3rem 3rem 1rem;
                 left: 0;
 
-                &:before {
+                &:after {
                     content: "⮜";
                 }
             }
@@ -173,7 +171,7 @@ export default class extends mixins(Page) {
                 padding: 3rem 1rem 3rem 3rem;
                 right: 0;
 
-                &:before {
+                &:after {
                     content: "⮞";
                 }
             }
