@@ -1,6 +1,6 @@
 <template>
 <project
-    homepage="https://sourceforge.net/projects/mesonplayer/"
+    homepage="https://mesonplayer.alkatrazstudio.net"
     :screenshots="screenshots"
 >
 <p>
