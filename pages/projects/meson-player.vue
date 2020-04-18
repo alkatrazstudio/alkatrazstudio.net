@@ -51,15 +51,12 @@
     The list of supported platforms:
 </p>
 <ul>
-    <li>MS Windows 10 i686 &amp; x86_64</li>
-    <li>Linux i686 &amp; x86_64 (no binaries yet)</li>
+    <li>MS Windows 10 x86_64</li>
+    <li>Linux x86_64</li>
     <li>OSX x86_64</li>
 </ul>
 <p>
-    <strong>NOTE:</strong> Windows versions older than Windows 10 are not supported!
-</p>
-<p>
-    On Windows its better to download 64-bit version, since 32-bit version may be retired soon.
+    <strong>NOTE:</strong> Windows versions older than Windows 10 and 32-bit OS are not supported!
 </p>
 <p>
     The main idea for creating this player is based on an assumption that most of features
