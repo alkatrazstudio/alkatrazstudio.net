@@ -3,7 +3,7 @@
     <div id="content">
         <Nuxt/>
     </div>
-    <div id="startup-bg"/>
+    <div id="startup-bg" v-if="displayStartupBg"/>
 </div>
 </template>
 
@@ -13,8 +13,10 @@ import {Component, Vue} from 'nuxt-property-decorator'
 @Component
 export default class extends Vue {
     ready = false
+    displayStartupBg = false
 
     mounted() {
+        this.displayStartupBg = true
         if(process.browser)
             setTimeout(() => this.ready = true, 500)
     }
