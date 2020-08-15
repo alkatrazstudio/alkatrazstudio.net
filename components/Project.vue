@@ -1,5 +1,5 @@
 <template>
-<plain-article class="project">
+<plain-article class="project" :flex="true">
     <section class="project-meta">
         <div>
             <label class="meta-summary">{{ summary }}</label>
@@ -120,6 +120,10 @@ export default class extends mixins(Page) {
                 color: $black;
             }
         }
+    }
+
+    .project-main {
+        flex: 1;
     }
 
     .project-screenshots {

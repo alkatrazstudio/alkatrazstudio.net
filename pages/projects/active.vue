@@ -27,6 +27,10 @@ export function menuItems(): MenuItem[] {
         to: '/projects/gottext',
         title: 'GotText',
         desc: 'Translation engine for PHP with features of gettext'
+    }, {
+        to: '/projects/previous-colors',
+        title: 'Previous Colors',
+        desc: 'Quickly choose from previously used colors in Thunderbird'
     }]
 }
 

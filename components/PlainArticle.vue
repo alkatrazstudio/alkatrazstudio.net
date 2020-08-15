@@ -3,7 +3,7 @@
     <header>
         <h1>{{ menuItem.title }}</h1>
     </header>
-    <article>
+    <article :class="{flex}">
         <slot/>
     </article>
     <footer>
@@ -21,6 +21,8 @@ import {getArticleFont} from '~/utils/font'
 
 @Component
 export default class extends mixins(Page) {
+    @Prop(Boolean) flex: boolean = false
+
     get font(): string {
         return getArticleFont().id
     }
@@ -52,6 +54,11 @@ export default class extends mixins(Page) {
 
     > article {
         flex: 1;
+
+        &.flex {
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     > footer {
