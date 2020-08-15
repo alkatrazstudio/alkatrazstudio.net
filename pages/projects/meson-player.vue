@@ -74,11 +74,16 @@
 </template>
 
 <script lang="ts">
-import {Component, mixins} from 'nuxt-property-decorator'
-import {Screenshot, project} from '~/components/Project.vue'
+import {Component, Vue} from 'nuxt-property-decorator'
+import {Screenshot} from '~/components/Project.vue'
 
-@Component
-export default class extends mixins(project) {
+@Component({
+    components: {
+        Project: () => import('~/components/Project.vue'),
+        ExtLink: () => import('~/components/ExtLink.vue')
+    }
+})
+export default class extends Vue {
     screenshots: Screenshot[] = [{
         name: 'win',
         label: 'Meson Player in Windows 10'

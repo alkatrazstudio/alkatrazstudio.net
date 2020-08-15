@@ -54,8 +54,6 @@ export interface ProjectMeta {
     files?: File[]
 }
 
-export {default as project} from '~/mixins/project'
-
 @Component({
     components: {
         PlainArticle: () => import('~/components/PlainArticle.vue'),
