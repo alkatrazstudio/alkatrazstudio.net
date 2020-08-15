@@ -21,7 +21,7 @@ import {getArticleFont} from '~/utils/font'
 
 @Component
 export default class extends mixins(Page) {
-    @Prop(Boolean) flex: boolean = false
+    @Prop(Boolean) flex?: boolean
 
     get font(): string {
         return getArticleFont().id

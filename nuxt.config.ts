@@ -13,7 +13,7 @@ const config: Configuration = {
 
         link: [
             {rel: 'manifest', href: '/manifest.json'},
-            {rel: 'apple-touch-icon', sizes: '180x180', href:'/icons/apple-touch-icon.png'},
+            {rel: 'apple-touch-icon', sizes: '180x180', href:'/icons/apple-touch-icon-180x180.png'},
             {rel: 'icon', type: 'image/png', sizes: '48x48', href: '/icons/favicon-48x48.png'},
             {rel: 'icon', type: 'image/png', sizes: '32x32', href: '/icons/favicon-32x32.png'},
             {rel: 'icon', type: 'image/png', sizes: '16x16', href: '/icons/favicon-16x16.png'},
@@ -62,7 +62,9 @@ const config: Configuration = {
 
     buildModules: [
         '@nuxt/typescript-build'
-    ]
+    ],
+
+    telemetry: false
 }
 
 export default config
