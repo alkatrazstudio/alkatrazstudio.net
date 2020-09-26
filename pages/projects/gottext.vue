@@ -1,6 +1,6 @@
 <template>
 <project
-    homepage="https://gitlab.com/alkatrazstudio/gottext"
+    homepage="https://github.com/alkatrazstudio/gottext"
 >
 <p>
     GotText is a translation engine for PHP 7.
@@ -20,7 +20,7 @@
 </p>
 <p>
     You can read all the other details at the
-    <ext-link href="https://gitlab.com/alkatrazstudio/gottext">GotText homepage</ext-link>.
+    <ext-link href="https://github.com/alkatrazstudio/gottext">GotText homepage</ext-link>.
 </p>
 </project>
 </template>
