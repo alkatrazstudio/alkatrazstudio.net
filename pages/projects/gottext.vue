@@ -11,16 +11,13 @@
     and also has an extra functionality on top.
 </p>
 <p>
-    GotText is fully documented
+    GotText is fully
+    <ext-link href="https://alkatrazstudio.gitlab.io/gottext/api/">documented</ext-link>
     and can be built at least on Debian, Ubuntu  and CentOS.
 </p>
 <p>
-    The project most likely will remain source-only
-    until someone decides to be the package maintainer.
-</p>
-<p>
-    You can read all the other details at the
-    <ext-link href="https://github.com/alkatrazstudio/gottext">GotText homepage</ext-link>.
+    Binary releases for Ubuntu can be found
+    <ext-link href="https://github.com/alkatrazstudio/gottext/releases">here</ext-link>.
 </p>
 </project>
 </template>
