@@ -153,6 +153,7 @@ export default class extends mixins(Page) {
                 display: inline-block;
                 font-size: 2rem;
                 line-height: 100%;
+                content: "➤";
             }
 
             &:hover,
@@ -165,17 +166,13 @@ export default class extends mixins(Page) {
                 left: 0;
 
                 &:after {
-                    content: "⮜";
+                    transform: rotate(180deg);
                 }
             }
 
             &.swiper-button-next {
                 padding: 3rem 1rem 3rem 3rem;
                 right: 0;
-
-                &:after {
-                    content: "⮞";
-                }
             }
 
             &.swiper-button-disabled {
