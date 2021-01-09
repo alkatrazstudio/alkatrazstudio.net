@@ -18,7 +18,7 @@
     <ext-link href="https://en.wikipedia.org/wiki/TR-DOS">TR-DOS</ext-link>.
 </p>
 <p>
-    To save you some eye damage the ZX Spectrum fonts are used by default only in menus.
+    To save you some eye damage the ZX Spectrum fonts are used by default only in the menus.
     You can also change the fonts in the <nuxt-link to="/settings">Settings</nuxt-link>.
     The speccy font was found
     <ext-link href="https://zx-pk.ru/threads/14785-russkij-ttf-shrift-kak-na-spektrume.html?p=348597&amp;viewfull=1#post348597">here</ext-link>.
@@ -27,14 +27,14 @@
     The site can be operated using a keyboard only,
     but the browser window needs to be in focus
     (e. g. you may need to click inside the window for a keyboard to work).
-    The site can also be comfortably viewed on text-only browsers.
+    The site can also be comfortably viewed in text-only browsers.
 </p>
 <p>
     If you want to contact me regarding any of my projects then
     consider the following:
 </p>
 <ul>
-    <li>If the project is no longer maintained, then forget about it.</li>
+    <li>If the project is no longer maintained then forget about it.</li>
     <li>
         If you want to file an issue or make a suggestion regarding an active project,
         then use the appropriate issue tracker on the project's homepage,
