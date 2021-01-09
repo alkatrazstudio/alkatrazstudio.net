@@ -11,20 +11,20 @@
     },
     "devDependencies": {
         "@nuxt/typescript-build": "^2.0.3",
-        "sass": "^1.26.11",
-        "sass-loader": "^10.0.2"
+        "sass": "^1.32.2",
+        "sass-loader": "^10.1.0"
     },
     "dependencies": {
-        "@nuxt/types": "^2.14.6",
+        "@nuxt/types": "^2.14.12",
         "@nuxt/typescript-runtime": "^2.0.0",
         "normalize.css": "^8.0.1",
-        "nuxt": "^2.14.6",
+        "nuxt": "^2.14.12",
         "nuxt-property-decorator": "^2.8.8",
-        "swiper": "^6.3.1",
-        "ts-node": "^9.0.0",
+        "swiper": "^6.4.5",
+        "ts-node": "^9.1.1",
         "vue-awesome-swiper": "^4.1.1"
     },
     "engines": {
-        "node": ">=10.13.0"
+        "node": ">=14.15.0"
     }
 }

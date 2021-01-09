@@ -1,7 +1,7 @@
-import { Configuration } from '@nuxt/types'
+import { NuxtConfig } from '@nuxt/types'
 import Sass from 'sass'
 
-const config: Configuration = {
+const config: NuxtConfig = {
     head: {
         meta: [
             {charset: 'utf-8'},
@@ -51,6 +51,8 @@ const config: Configuration = {
     generate: {
         fallback: '404.html'
     },
+
+    target: 'static',
 
     router: {
         linkPrefetchedClass: 'nuxt-link-prefetched'
