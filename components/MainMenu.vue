@@ -80,6 +80,7 @@ export default class extends mixins(Page) {
         const items = this.menuItem.children || []
         if(!this.parentPath)
             return items
+        const hasJS = process.client ? document.documentElement.classList.contains('js') : false
         return [{
             to: this.parentPath,
             title: '(back)',
@@ -216,7 +217,8 @@ $hoveredItemBg: $cyan;
                 color: $mainFg;
                 outline: none;
 
-                &.active {
+                &.active,
+                &:focus {
                     background: $activeItemBg;
                 }
 

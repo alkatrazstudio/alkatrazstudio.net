@@ -27,7 +27,8 @@
     The site can be operated using a keyboard only,
     but the browser window needs to be in focus
     (e. g. you may need to click inside the window for a keyboard to work).
-    The site can also be comfortably viewed in text-only browsers.
+    The site can also be comfortably viewed without JavaScript enabled
+    or in text-only browsers.
 </p>
 <p>
     If you want to contact me regarding any of my projects then

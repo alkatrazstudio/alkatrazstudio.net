@@ -3,7 +3,10 @@
     <article>
         <p>{{ errMessage }}</p>
         <p class="err-code"><span>{{ errCodeMessage }}</span>{{ errCodeMessagePad }}</p>
-        <p><nuxt-link to="/" class="back-link">return to homepage (backspace key)</nuxt-link></p>
+        <p>
+            <nuxt-link to="/" class="back-link"
+                >return back<span class="js-visible">(backspace key)</span></nuxt-link>
+        </p>
     </article>
     <footer>
         <p>R Tape loading error, 0:1</p>

@@ -1,9 +1,9 @@
 <template>
-<div id="app" :class="{ready}">
+<div id="app">
     <div id="content">
         <Nuxt/>
     </div>
-    <div id="startup-bg" v-if="displayStartupBg" :class="{'reset-anim': resetAnim}"/>
+    <div id="startup-bg"/>
 </div>
 </template>
 
@@ -12,21 +12,6 @@ import {Component, Vue} from 'nuxt-property-decorator'
 
 @Component
 export default class extends Vue {
-    ready = false
-    displayStartupBg = false
-    resetAnim = false
-
-    mounted() {
-        this.displayStartupBg = true
-        setTimeout(() => {
-            this.resetAnim = true
-
-            setTimeout(() => {
-                this.displayStartupBg = false
-                this.ready = true
-            }, 900)
-        }, 300)
-    }
 }
 </script>
 
@@ -52,23 +37,29 @@ export default class extends Vue {
     $redLines: linear-gradient(90deg, transparent 0%, transparent calc(100%/8*7), $red calc(100%/8*7), $red 100%);
 
     from {
+        display: block;
         background-size: 1em 100%;
-        background-image: none;
+        visibility: visible;
+        background-color: $white;
     }
 
-    0% {
+    20% {
+        background-color: $black;
+    }
+
+    50% {
         background-image: spaces(65%, 6, 6, 6, 6, 4, 4, 4, 3, 3, 3, 2, 2, 1), $redLines;
     }
 
-    15% {
+    55% {
         background-image: spaces(32%, 4, 4, 4, 4, 3, 3, 3, 2, 2, 2, 1, 1), $redLines;
     }
 
-    30% {
+    60% {
         background-image: $redLines;
     }
 
-    60% {
+    70% {
         background-size: 1em 1em;
         background-image:
             linear-gradient(transparent calc(1rem / 8), transparent calc(6rem / 8), $black calc(6rem / 8), #{$black} 100%),
@@ -83,6 +74,21 @@ export default class extends Vue {
     to {
         background-size: 1em 100%;
         background-image: none;
+        visibility: hidden;
+    }
+}
+
+@keyframes opacityToggle {
+    from {
+        opacity: 0;
+    }
+
+    99% {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
 
@@ -99,7 +105,10 @@ export default class extends Vue {
     #content {
         flex: 1;
         display: flex;
-        opacity: 0;
+
+        @include js-enabled {
+            animation: 1.25s step-end opacityToggle;
+        }
     }
 
     #startup-bg {
@@ -112,16 +121,10 @@ export default class extends Vue {
         right: 0;
         bottom: 0;
         transform: translateX(-50%);
-        background-color: $black;
+        visibility: hidden;
 
-        &.reset-anim {
-            animation: 0.4s step-end reset;
-        }
-    }
-
-    &.ready {
-        #content {
-            opacity: 1;
+        @include js-enabled {
+            animation: 1.25s step-end reset;
         }
     }
 

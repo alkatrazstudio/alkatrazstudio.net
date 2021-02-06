@@ -8,7 +8,9 @@
     </article>
     <footer>
         <p>
-            <nuxt-link v-if="parentPath" :to="parentPath">return back (backspace key)</nuxt-link>
+            <nuxt-link v-if="parentPath" :to="parentPath"
+                >return back <span class="js-visible">(backspace key)</span>
+            </nuxt-link>
         </p>
     </footer>
 </div>

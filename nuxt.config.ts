@@ -3,6 +3,9 @@ import Sass from 'sass'
 
 const config: NuxtConfig = {
     head: {
+        __dangerouslyDisableSanitizers: ['script'],
+        script: [{innerHTML: "document.documentElement.classList.add('js')"}],
+
         meta: [
             {charset: 'utf-8'},
             {name: 'viewport', content: 'width=device-width, initial-scale=1'},
@@ -32,7 +35,7 @@ const config: NuxtConfig = {
     ],
 
     build: {
-        extractCSS: true,
+        extractCSS: false,
         optimizeCSS: true,
 
         loaders: {

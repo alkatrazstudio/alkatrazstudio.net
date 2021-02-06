@@ -40,3 +40,33 @@ $mainFg: $black;
         font-family: serif;
     }
 }
+
+@mixin js-enabled {
+    $parent: &;
+    @at-root {
+        html.js {
+            @if $parent {
+                #{$parent} {
+                    @content;
+                }
+            } @else {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin js-disabled {
+    $parent: &;
+    @at-root {
+        html:not(.js) {
+            @if $parent {
+                #{$parent} {
+                    @content;
+                }
+            } @else {
+                @content;
+            }
+        }
+    }
+}

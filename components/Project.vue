@@ -126,6 +126,18 @@ export default class extends mixins(Page) {
 
     .project-screenshots {
         margin-bottom: 1rem;
+        max-width: 100%;
+        overflow: hidden;
+
+        .swiper-wrapper {
+            @include js-disabled {
+                display: block;
+
+                .screenshot {
+                    margin-top: 2ch;
+                }
+            }
+        }
 
         .swiper-pagination {
             position: static;
@@ -176,6 +188,10 @@ export default class extends mixins(Page) {
             }
 
             &.swiper-button-disabled {
+                display: none;
+            }
+
+            @include js-disabled {
                 display: none;
             }
         }
