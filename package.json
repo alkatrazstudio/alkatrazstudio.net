@@ -10,17 +10,17 @@
         "dist": "nuxt-ts generate --modern"
     },
     "devDependencies": {
-        "@nuxt/typescript-build": "^2.0.3",
-        "sass": "^1.32.2",
+        "@nuxt/typescript-build": "^2.0.4",
+        "sass": "^1.32.6",
         "sass-loader": "^10.1.0"
     },
     "dependencies": {
         "@nuxt/types": "^2.14.12",
-        "@nuxt/typescript-runtime": "^2.0.0",
+        "@nuxt/typescript-runtime": "^2.0.1",
         "normalize.css": "^8.0.1",
         "nuxt": "^2.14.12",
-        "nuxt-property-decorator": "^2.8.8",
-        "swiper": "^6.4.5",
+        "nuxt-property-decorator": "^2.9.1",
+        "swiper": "^6.4.10",
         "ts-node": "^9.1.1",
         "vue-awesome-swiper": "^4.1.1"
     },
