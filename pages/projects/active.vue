@@ -24,6 +24,10 @@ export function menuItems(): MenuItem[] {
         title: 'XMPZXTUNE',
         desc: 'Chiptune support for XMPlay'
     }, {
+        to: '/projects/musbconv',
+        title: 'musbconv',
+        desc: 'Audio files converter'
+    },{
         to: '/projects/gottext',
         title: 'GotText',
         desc: 'Translation engine for PHP with features of gettext'
