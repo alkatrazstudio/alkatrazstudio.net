@@ -6,21 +6,20 @@
     "license": "AGPLv3",
     "private": true,
     "scripts": {
-        "local": "nuxt-ts",
-        "dist": "nuxt-ts generate --modern"
+        "local": "nuxt",
+        "dist": "nuxt generate --modern"
     },
     "devDependencies": {
         "@nuxt/typescript-build": "^2.0.4",
-        "sass": "^1.32.6",
+        "sass": "^1.32.12",
         "sass-loader": "^10.1.0"
     },
     "dependencies": {
         "@nuxt/types": "^2.14.12",
-        "@nuxt/typescript-runtime": "^2.0.1",
         "normalize.css": "^8.0.1",
-        "nuxt": "^2.14.12",
+        "nuxt": "^2.15.4",
         "nuxt-property-decorator": "^2.9.1",
-        "swiper": "^6.4.10",
+        "swiper": "^6.5.9",
         "ts-node": "^9.1.1",
         "vue-awesome-swiper": "^4.1.1"
     },
