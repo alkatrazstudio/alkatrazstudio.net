@@ -11,16 +11,16 @@
     },
     "devDependencies": {
         "@nuxt/typescript-build": "^2.0.4",
-        "sass": "^1.32.12",
+        "sass": "^1.35.2",
         "sass-loader": "^10.1.0"
     },
     "dependencies": {
-        "@nuxt/types": "^2.14.12",
+        "@nuxt/types": "^2.15.7",
         "normalize.css": "^8.0.1",
-        "nuxt": "^2.15.4",
+        "nuxt": "^2.15.7",
         "nuxt-property-decorator": "^2.9.1",
-        "swiper": "^6.5.9",
-        "ts-node": "^9.1.1",
+        "swiper": "^6.7.5",
+        "ts-node": "^10.1.0",
         "vue-awesome-swiper": "^4.1.1"
     },
     "engines": {

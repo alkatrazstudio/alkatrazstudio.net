@@ -7,7 +7,19 @@ import {Component, Vue} from 'nuxt-property-decorator'
 import {MenuItem} from '~/mixins/menu'
 
 export function menuItems(): MenuItem[] {
-    return [{
+    return [ {
+        to: '/projects/feedmash',
+        title: 'FeedMash',
+        desc: 'Web feeds multiplexer'
+    }, {
+        to: '/projects/musbconv',
+        title: 'musbconv',
+        desc: 'Audio files converter'
+    }, {
+        to: '/projects/previous-colors',
+        title: 'Previous Colors',
+        desc: 'Quickly choose from previously used colors in Thunderbird'
+    }, {
         to: '/projects/gpu-fan-meister',
         title: 'GPU Fan Meister',
         desc: 'Control your video card fan speed with simple and/or advanced methods'
@@ -24,17 +36,9 @@ export function menuItems(): MenuItem[] {
         title: 'XMPZXTUNE',
         desc: 'Chiptune support for XMPlay'
     }, {
-        to: '/projects/musbconv',
-        title: 'musbconv',
-        desc: 'Audio files converter'
-    },{
         to: '/projects/gottext',
         title: 'GotText',
         desc: 'Translation engine for PHP with features of gettext'
-    }, {
-        to: '/projects/previous-colors',
-        title: 'Previous Colors',
-        desc: 'Quickly choose from previously used colors in Thunderbird'
     }]
 }
 
