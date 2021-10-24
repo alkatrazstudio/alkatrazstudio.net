@@ -7,7 +7,11 @@ import {Component, Vue} from 'nuxt-property-decorator'
 import {MenuItem} from '~/mixins/menu'
 
 export function menuItems(): MenuItem[] {
-    return [ {
+    return [{
+        to: '/projects/sonuspresto',
+        title: 'SonusPresto',
+        desc: 'Folder-based music player for Android'
+    }, {
         to: '/projects/feedmash',
         title: 'FeedMash',
         desc: 'Web feeds multiplexer'
