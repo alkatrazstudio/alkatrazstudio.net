@@ -8,6 +8,10 @@ import {MenuItem} from '~/mixins/menu'
 
 export function menuItems(): MenuItem[] {
     return [{
+        to: '/projects/neodim',
+        title: 'Neodim Server',
+        desc: 'Natural text generation AI via HTTP'
+    }, {
         to: '/projects/sonuspresto',
         title: 'SonusPresto',
         desc: 'Folder-based music player for Android'
