@@ -9,8 +9,8 @@ import {MenuItem} from '~/mixins/menu'
 export function menuItems(): MenuItem[] {
     return [{
         to: '/projects/neodim',
-        title: 'Neodim Server',
-        desc: 'Natural text generation AI via HTTP'
+        title: 'Neodim',
+        desc: 'Set of applications for natural text generation'
     }, {
         to: '/projects/sonuspresto',
         title: 'SonusPresto',

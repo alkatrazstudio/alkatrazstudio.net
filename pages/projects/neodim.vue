@@ -2,8 +2,10 @@
 <project
     homepage="https://github.com/alkatrazstudio/neodim-server"
 >
+<p>There are currently two applications in this group</p>
 <p>
-    Neodim Server is an HTTP-server that provides natural language text generation using a selected language model.
+    1. <ext-link href="https://github.com/alkatrazstudio/neodim-server">Neodim Server</ext-link>
+    - an HTTP-server that provides natural language text generation using a selected language model.
 </p>
 <p>
     This is basically an HTTP-wrapper around some of the existing language models on Hugging Face.
@@ -13,6 +15,14 @@
 </p>
 <p>
     Inspired by various "AI Dungeon"-like projects.
+</p>
+<p>
+    2. <ext-link href="https://github.com/alkatrazstudio/neodim-chat">Neodim Chat</ext-link>
+    - a chat application where you can talk with a bot, which is powered by Neodim Server.
+</p>
+<p>
+    This is a chat between two participants where each reply can be written either by you or AI.
+    All Neodim Server request parameters are configurable from the settings.
 </p>
 </project>
 </template>
