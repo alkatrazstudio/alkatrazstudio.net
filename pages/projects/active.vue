@@ -8,6 +8,10 @@ import {MenuItem} from '~/mixins/menu'
 
 export function menuItems(): MenuItem[] {
     return [{
+        to: '/projects/humanpass',
+        title: 'humanpass',
+        desc: 'Generate strong passwords that are easy to remember'
+    }, {
         to: '/projects/neodim',
         title: 'Neodim',
         desc: 'Set of applications for natural text generation'
