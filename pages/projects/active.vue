@@ -8,8 +8,8 @@ import {MenuItem} from '~/mixins/menu'
 
 export function menuItems(): MenuItem[] {
     return [{
-        to: '/projects/humanpass',
-        title: 'humanpass',
+        to: '/projects/humanpwd',
+        title: 'humanpwd',
         desc: 'Generate strong passwords that are easy to remember'
     }, {
         to: '/projects/neodim',

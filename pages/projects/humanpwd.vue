@@ -1,9 +1,9 @@
 <template>
 <project
-    homepage="https://github.com/alkatrazstudio/humanpass"
+    homepage="https://github.com/alkatrazstudio/humanpwd"
 >
 <p>
-    humanpass generates several passwords that consist of four words each.
+    humanpwd generates several passwords that consist of four words each.
     The passwords will only contain lower-case English words without numbers, special symbols, etc.
     Based on the idea from the popular
     <ext-link href="https://xkcd.com/936/">XKCD comic</ext-link>.
@@ -11,11 +11,11 @@
 <p>
     There were already some password generators based on that idea,
     but most of them are over-engineered and will only give you one password at a time.
-    humanpass is much simpler and straightforward.
+    humanpwd is much simpler and straightforward.
 </p>
 <p>
-    humanpass is available as a <ext-link href="https://humanpass.alkatrazstudio.net">website</ext-link>
-    and as a <ext-link href="https://github.com/alkatrazstudio/humanpass/releases">stand-alone binary</ext-link>.
+    humanpwd is available as a <ext-link href="https://humanpwd.alkatrazstudio.net">website</ext-link>
+    and as a <ext-link href="https://github.com/alkatrazstudio/humanpwd/releases">stand-alone binary</ext-link>.
 </p>
 </project>
 </template>
