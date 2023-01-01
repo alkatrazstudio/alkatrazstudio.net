@@ -1,5 +1,5 @@
 <template>
-<project
+<Project
     homepage="https://sourceforge.net/projects/lockonlidclose/"
 >
 <p>
@@ -26,16 +26,5 @@
     This application is only for Windows Vista or later!
     Also read README.TXT before use!
 </p>
-</project>
+</Project>
 </template>
-
-<script lang="ts">
-import {Component, Vue} from 'nuxt-property-decorator'
-
-@Component({
-    components: {
-        Project: () => import('~/components/Project.vue')
-    }
-})
-export default class extends Vue {}
-</script>

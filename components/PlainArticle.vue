@@ -1,5 +1,5 @@
 <template>
-<div class="plain" :class="`font-${font}`">
+<div class="plain" :class="`font-${fontId}`">
     <header>
         <h1>{{ menuItem.title }}</h1>
     </header>
@@ -8,31 +8,29 @@
     </article>
     <footer>
         <p>
-            <nuxt-link v-if="parentPath" :to="parentPath"
-                >return back <span class="js-visible">(backspace key)</span>
-            </nuxt-link>
+            <NuxtLink v-if="parentPath" :to="parentPath"
+                >return back <span class="js-visible">(backspace key)</span></NuxtLink>&nbsp;
         </p>
     </footer>
 </div>
 </template>
 
-<script lang="ts">
-import {Component, Vue, Prop, mixins} from 'nuxt-property-decorator'
-import Page from '~/mixins/page'
-import {getArticleFont} from '~/utils/font'
+<script setup lang="ts">
+withDefaults(defineProps<{
+    flex?: boolean
+}>(), {
+    flex: false
+})
 
-@Component
-export default class extends mixins(Page) {
-    @Prop(Boolean) flex?: boolean
+const menuItem = useMenuItem()
+const parentPath = useParentPath(menuItem)
+const fontId = useArticleFontId()
 
-    get font(): string {
-        return getArticleFont().id
-    }
-}
+usePageKbd(parentPath)
 </script>
 
 <style scoped lang="scss">
-@import "style/inc";
+@import "~/assets/styles/inc.scss";
 
 .plain {
     font-family: monospace;
@@ -77,7 +75,8 @@ export default class extends mixins(Page) {
         }
     }
 
-    ::v-deep img {
+    :deep(img) {
+        display: block;
         max-width: 100%;
 
         &.qr {

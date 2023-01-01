@@ -1,11 +1,11 @@
 <template>
-<project
+<Project
     homepage="http://dqe.sourceforge.net"
     :screenshots="screenshots"
 >
 <p>
     Dizzy Quest Editor (DQE) is an advanced all-in-one
-    <ext-link href="https://en.wikipedia.org/wiki/Dizzy_(series)">Dizzy</ext-link>-style
+    <ExtLink href="https://en.wikipedia.org/wiki/Dizzy_(series)">Dizzy</ExtLink>-style
     2D adventure game development environment.
 </p>
 <p>
@@ -32,32 +32,21 @@
     </li>
 </ul>
 <p>
-    Visit the <ext-link href="http://dqe.sourceforge.net">DQE homepage</ext-link>
+    Visit the <ExtLink href="http://dqe.sourceforge.net">DQE homepage</ExtLink>
     to get more information, techinical data and screenshots.
 </p>
-</project>
+</Project>
 </template>
 
-<script lang="ts">
-import {Component, Vue} from 'nuxt-property-decorator'
-import {Screenshot} from '~/components/Project.vue'
-
-@Component({
-    components: {
-        Project: () => import('~/components/Project.vue'),
-        ExtLink: () => import('~/components/ExtLink.vue')
-    }
-})
-export default class extends Vue {
-    screenshots: Screenshot[] = [{
-        name: 'general',
-        label: 'General view'
-    }, {
-        name: 'scripts',
-        label: 'Scripts editor'
-    }, {
-        name: 'player',
-        label: 'Quest Player'
-    }]
-}
+<script setup lang="ts">
+const screenshots: Screenshot[] = [{
+    name: 'general',
+    label: 'General view'
+}, {
+    name: 'scripts',
+    label: 'Scripts editor'
+}, {
+    name: 'player',
+    label: 'Quest Player'
+}]
 </script>

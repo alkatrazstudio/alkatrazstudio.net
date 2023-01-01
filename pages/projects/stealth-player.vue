@@ -1,12 +1,12 @@
 <template>
-<project
+<Project
     homepage="https://sourceforge.net/projects/stealthplayer/"
     :screenshots="screenshots"
 >
 <p>
     <strong>ATTENTION:</strong>
     this project had been superseded by
-    <nuxt-link to="/projects/meson-player">Meson Player</nuxt-link>!
+    <NuxtLink to="/projects/meson-player">Meson Player</NuxtLink>!
 </p>
 <p>
     Stealth Player is a music player with almost no GUI (except tooltips and tray context menu).
@@ -58,28 +58,18 @@
 <p>
     Read the README file inside the archive for a quick start guide!
 </p>
-</project>
+</Project>
 </template>
 
-<script lang="ts">
-import {Component, Vue} from 'nuxt-property-decorator'
-import {Screenshot} from '~/components/Project.vue'
-
-@Component({
-    components: {
-        Project: () => import('~/components/Project.vue')
-    }
-})
-export default class extends Vue {
-    screenshots: Screenshot[] = [{
-        name: 'normal',
-        label: 'Normal mode: no GUI'
-    }, {
-        name: 'balloon',
-        label: 'Balloon tooltips'
-    }, {
-        name: 'radio',
-        label: 'Playing Internet radio'
-    }]
-}
+<script setup lang="ts">
+const screenshots: Screenshot[] = [{
+    name: 'normal',
+    label: 'Normal mode: no GUI'
+}, {
+    name: 'balloon',
+    label: 'Balloon tooltips'
+}, {
+    name: 'radio',
+    label: 'Playing Internet radio'
+}]
 </script>

@@ -1,5 +1,5 @@
 <template>
-<project
+<Project
     :screenshots="screenshots"
 >
 <p>
@@ -18,25 +18,25 @@
 <p>
     The history of this game is pretty interesting.
     It all started in 1964 with "The Sumerian Game" for
-    <ext-link href="https://en.wikipedia.org/wiki/IBM_7090">IBM 7090</ext-link>.
+    <ExtLink href="https://en.wikipedia.org/wiki/IBM_7090">IBM 7090</ExtLink>.
     There's a reference to this game in
-    <ext-link href="https://eric.ed.gov/?id=ED014227">this publication</ext-link> (see chapter 4).
+    <ExtLink href="https://eric.ed.gov/?id=ED014227">this publication</ExtLink> (see chapter 4).
     This game inspired a similar game - "The Sumer Game" made in 1968 for
-    <ext-link href="https://en.wikipedia.org/wiki/PDP-8">PDP-8</ext-link>.
+    <ExtLink href="https://en.wikipedia.org/wiki/PDP-8">PDP-8</ExtLink>.
     The official information about this game is almost nowhere to be found,
     and the only mention of this game is in the
-    <ext-link href="https://www.webcitation.org/6f6xOaF52">"DECUS Program Library Catalog for PDP-8, FOCAL8" publication</ext-link>
+    <ExtLink href="https://www.webcitation.org/6f6xOaF52">"DECUS Program Library Catalog for PDP-8, FOCAL8" publication</ExtLink>
     (search for "The Sumer Game").
     The extended version of "The Sumer Game" was developed in 1971 and later renamed to
-    <ext-link href="https://en.wikipedia.org/wiki/Hamurabi_(video_game)">"Hamurabi"</ext-link>.
+    <ExtLink href="https://en.wikipedia.org/wiki/Hamurabi_(video_game)">"Hamurabi"</ExtLink>.
     This is the first version to run on personal computers, e.g.
-    <ext-link href="https://en.wikipedia.org/wiki/Atari_8-bit_family">Atari</ext-link>
-    (see this <ext-link href="https://www.atariarchives.org/basicgames/showpage.php?page=78">"BASIC Computer Games" publication</ext-link>).
+    <ExtLink href="https://en.wikipedia.org/wiki/Atari_8-bit_family">Atari</ExtLink>
+    (see this <ExtLink href="https://www.atariarchives.org/basicgames/showpage.php?page=78">"BASIC Computer Games" publication</ExtLink>).
     A lot of other games were based on "Hamurabi".
-    One such game is <ext-link href="https://www.mobygames.com/game/kingdom">"Kingdom"</ext-link> from 1972
-    for <ext-link href="https://en.wikipedia.org/wiki/Altair_8800">Altair 8800</ext-link> and other systems.
+    One such game is <ExtLink href="https://www.mobygames.com/game/kingdom">"Kingdom"</ExtLink> from 1972
+    for <ExtLink href="https://en.wikipedia.org/wiki/Altair_8800">Altair 8800</ExtLink> and other systems.
     Then, the ZX Spectrum port of "Kingdom"
-    <ext-link href="https://zxpress.ru/book_articles.php?id=1185">has appeared in the book "Как написать игру для ZX Spectrum"</ext-link>
+    <ExtLink href="https://zxpress.ru/book_articles.php?id=1185">has appeared in the book "Как написать игру для ZX Spectrum"</ExtLink>
     (eng: "How to write a game for ZX Spectrum") in the year of 1994.
 </p>
 <p>
@@ -54,7 +54,7 @@
 <p>
     "Kingdom 3" with its source code was released to the public,
     and in 2011 it was
-    <ext-link href="http://instead-games.ru/game.php?ID=69">ported to INSTEAD game engine</ext-link>
+    <ExtLink href="http://instead-games.ru/game.php?ID=69">ported to INSTEAD game engine</ExtLink>
     (not by me) and called "Королевство Зерна" (eng: "Kingdom of Grain").
     Later, INSTEAD was ported to Android.
 </p>
@@ -68,7 +68,7 @@
     The abovementioned "Kingdom of Grain" is almost identical to my "Kingdom 3" in terms of gameplay
     but additionally has an English translation and some graphics.
     So, you can
-    <ext-link href="http://instead-games.ru/instead-em/?/games/instead-kingdom_of_grain-0.9.3.zip">play it online</ext-link>
+    <ExtLink href="http://instead-games.ru/instead-em/?/games/instead-kingdom_of_grain-0.9.3.zip">play it online</ExtLink>
     in INSTEAD emulator and get almost the same experience as playing the "Kingdom 3".
 </p>
 <p>
@@ -79,33 +79,22 @@
     <li>Windows Vista and newer versions ARE NOT supported!</li>
 </ul>
 <p>
-    <ext-link href="https://mega.nz/#!dc8V1SZL!VDT9HY9Se9KfmaoFkM1mbSS0FFLASzHa1CbEgK2YY7c">
+    <ExtLink href="https://mega.nz/#!dc8V1SZL!VDT9HY9Se9KfmaoFkM1mbSS0FFLASzHa1CbEgK2YY7c">
         Download the binary and the source code.
-    </ext-link>
+    </ExtLink>
 </p>
-</project>
+</Project>
 </template>
 
-<script lang="ts">
-import {Component, Vue} from 'nuxt-property-decorator'
-import {Screenshot} from '~/components/Project.vue'
-
-@Component({
-    components: {
-        Project: () => import('~/components/Project.vue'),
-        ExtLink: () => import('~/components/ExtLink.vue')
-    }
-})
-export default class extends Vue {
-    screenshots: Screenshot[] = [{
-        name: 'trade',
-        label: 'Trade screen'
-    }, {
-        name: 'war',
-        label: 'War preparations'
-    }, {
-        name: 'stats',
-        label: 'Statistics window'
-    }]
-}
+<script setup lang="ts">
+const screenshots: Screenshot[] = [{
+    name: 'trade',
+    label: 'Trade screen'
+}, {
+    name: 'war',
+    label: 'War preparations'
+}, {
+    name: 'stats',
+    label: 'Statistics window'
+}]
 </script>

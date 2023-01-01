@@ -1,33 +1,21 @@
 <template>
-<project
+<Project
     homepage="https://sourceforge.net/projects/xmpzxtune/"
 >
 <p>
     XMPZXTUNE is a chiptune plugin for
-    <ext-link href="https://www.un4seen.com/xmplay.html">XMPlay</ext-link>.
+    <ExtLink href="https://www.un4seen.com/xmplay.html">XMPlay</ExtLink>.
 </p>
 <p>
-    Basically it's the same as <nuxt-link to="/projects/basszxtune">BASSZXTUNE</nuxt-link>, only for XMPlay.
+    Basically it's the same as <NuxtLink to="/projects/basszxtune">BASSZXTUNE</NuxtLink>, only for XMPlay.
     Nothing more to add.
 </p>
 <p>
     Visit the
-    <ext-link href="https://sourceforge.net/projects/xmpzxtune/">project's homepage</ext-link>
-    or
-    <ext-link href="https://www.un4seen.com/forum/?topic=16496.0">forum page on un4seen.com</ext-link>
+    <ExtLink href="https://sourceforge.net/projects/xmpzxtune/">project's homepage</ExtLink>
+    or the
+    <ExtLink href="https://www.un4seen.com/forum/?topic=16496.0">forum page on un4seen.com</ExtLink>
     for more details.
 </p>
-</project>
+</Project>
 </template>
-
-<script lang="ts">
-import {Component, Vue} from 'nuxt-property-decorator'
-
-@Component({
-    components: {
-        Project: () => import('~/components/Project.vue'),
-        ExtLink: () => import('~/components/ExtLink.vue')
-    }
-})
-export default class extends Vue {}
-</script>

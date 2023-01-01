@@ -1,5 +1,5 @@
 <template>
-<project
+<Project
     homepage="https://github.com/alkatrazstudio/gottext"
 >
 <p>
@@ -12,24 +12,12 @@
 </p>
 <p>
     GotText is fully
-    <ext-link href="https://alkatrazstudio.gitlab.io/gottext/api/">documented</ext-link>
-    and can be built at least on Debian, Ubuntu  and CentOS.
+    <ExtLink href="https://alkatrazstudio.gitlab.io/gottext/api/">documented</ExtLink>
+    and can be built at least on Debian, Ubuntu and CentOS.
 </p>
 <p>
     Binary releases for Ubuntu can be found
-    <ext-link href="https://github.com/alkatrazstudio/gottext/releases">here</ext-link>.
+    <ExtLink href="https://github.com/alkatrazstudio/gottext/releases">here</ExtLink>.
 </p>
-</project>
+</Project>
 </template>
-
-<script lang="ts">
-import {Component, Vue} from 'nuxt-property-decorator'
-
-@Component({
-    components: {
-        Project: () => import('~/components/Project.vue'),
-        ExtLink: () => import('~/components/ExtLink.vue')
-    }
-})
-export default class extends Vue {}
-</script>

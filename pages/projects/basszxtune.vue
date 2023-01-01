@@ -1,15 +1,15 @@
 <template>
-<project
+<Project
     homepage="https://sourceforge.net/projects/basszxtune/"
 >
 <p>
     BASSZXTUNE is an add-on for BASS audio library
-    (<ext-link href="https://www.un4seen.com/bass.html"/>).
+    (<ExtLink href="https://www.un4seen.com/bass.html"/>).
     It adds support for several
-    <ext-link href="https://en.wikipedia.org/wiki/Chiptune">chiptune</ext-link> file formats.
+    <ExtLink href="https://en.wikipedia.org/wiki/Chiptune">chiptune</ExtLink> file formats.
     This add-on is based on ZXTune library.
     So all credit goes to ZXTune project and its developer at
-    <ext-link href="https://zxtune.bitbucket.io/"/>
+    <ExtLink href="https://zxtune.bitbucket.io/"/>
     and also to all the authors of the third-party libraries.
 </p>
 <p>
@@ -25,8 +25,8 @@
     <li>PlayStation (psf, minipsf, ...)</li>
     <li>
         ... and a lot more.
-        See the <ext-link href="https://sourceforge.net/projects/basszxtune/">project's homepage</ext-link>
-        or <ext-link href="https://bitbucket.org/z80maniac/zxtune/src/master/apps/plugins/common/pluginbase.h#lines-51">the source code</ext-link>.
+        See the <ExtLink href="https://sourceforge.net/projects/basszxtune/">project's homepage</ExtLink>
+        or <ExtLink href="https://bitbucket.org/z80maniac/zxtune/src/master/apps/plugins/common/pluginbase.h#lines-51">the source code</ExtLink>.
     </li>
 </ul>
 <p>
@@ -70,23 +70,11 @@
 </p>
 <p>
     To build the add-on from the sources by yourself follow these
-    <ext-link href="https://bitbucket.org/z80maniac/zxtune/src/master/apps/plugins/BUILD.TXT">instructions</ext-link>.
+    <ExtLink href="https://bitbucket.org/z80maniac/zxtune/src/master/apps/plugins/BUILD.TXT">instructions</ExtLink>.
 </p>
 <p>
     Find more info and support on the
-    <ext-link href="https://www.un4seen.com/forum/?topic=15694.0">un4seen forum page</ext-link>.
+    <ExtLink href="https://www.un4seen.com/forum/?topic=15694.0">un4seen forum page</ExtLink>.
 </p>
-</project>
+</Project>
 </template>
-
-<script lang="ts">
-import {Component, Vue} from 'nuxt-property-decorator'
-
-@Component({
-    components: {
-        Project: () => import('~/components/Project.vue'),
-        ExtLink: () => import('~/components/ExtLink.vue')
-    }
-})
-export default class extends Vue {}
-</script>

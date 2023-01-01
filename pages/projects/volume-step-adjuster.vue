@@ -1,5 +1,5 @@
 <template>
-<project
+<Project
     homepage="https://sourceforge.net/projects/volstep/"
 >
 <p>
@@ -22,16 +22,5 @@
 <p>
     Read README.DIZ before use!
 </p>
-</project>
+</Project>
 </template>
-
-<script lang="ts">
-import {Component, Vue} from 'nuxt-property-decorator'
-
-@Component({
-    components: {
-        Project: () => import('~/components/Project.vue')
-    }
-})
-export default class extends Vue {}
-</script>

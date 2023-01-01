@@ -6,7 +6,7 @@
         </div>
         <div>
             <label class="meta-homepage" v-if="homepage">
-                <ext-link :href="homepage"/>
+                <ExtLink :href="homepage"/>
             </label>
         </div>
     </section>
@@ -14,97 +14,54 @@
         <slot/>
     </section>
     <section class="project-screenshots" v-if="screenshots">
-        <div v-swiper:swiper="swiperOption">
-            <div class="swiper-wrapper">
-                <screenshot
-                    v-for="screenshot in screenshots"
-                    :key="screenshot.name"
-                    :label="screenshot.label"
-                    :src="getScreenshotSrc(screenshot.name)"/>
-            </div>
+        <Swiper
+            :modules="[SwiperNavigation, SwiperPagination, SwiperKeyboard]"
+            :pagination="{el: '.swiper-pagination'}"
+            :navigation="{nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev'}"
+            :keyboard="{enabled: true}"
+        >
+            <SwiperSlide
+                v-for="screenshot in screenshots"
+                :key="screenshot.name"
+                class="project-screenshot"
+            >
+                <img :src="getScreenshotSrc(screenshot.name)" :alt="screenshot.label"/>
+                <label>{{ screenshot.label }}</label>
+            </SwiperSlide>
+
             <div class="swiper-pagination swiper-pagination-bullets"/>
             <div class="swiper-button-prev swiper-button-nav" :title="'previous screenshot\n(left arrow key)'"/>
             <div class="swiper-button-next swiper-button-nav" :title="'next screenshot\n(right arrow key)'"/>
-        </div>
+        </Swiper>
     </section>
 </plain-article>
 </template>
 
-<script lang="ts">
-import {Component, Prop, mixins} from 'nuxt-property-decorator'
-import Page from '~/mixins/page'
+<script setup lang="ts">
+defineProps<{
+    homepage?: string,
+    screenshots?: Screenshot[]
+}>()
 
-export interface File {
-    platform: string
-    link: string
-    size: number
+const menuItem = useMenuItem()
+const parentPath = useParentPath(menuItem)
+
+const images = import.meta.glob('~/assets/projects/*/*.png', { eager: true })
+
+function getScreenshotSrc(name: string) {
+    const localPath = `/assets/projects/${lastUriSegment(menuItem.value)}/${name}.png`
+    const image = images[localPath] as unknown as {default: string}
+    const href = image.default
+    return href
 }
 
-export interface Screenshot {
-    name: string
-    label: string
-}
+usePageKbd(parentPath)
 
-export interface ProjectMeta {
-    name?: string
-    summary?: string
-    version: string
-    updatedOn: string
-    homepage: string
-    files?: File[]
-}
-
-@Component({
-    components: {
-        PlainArticle: () => import('~/components/PlainArticle.vue'),
-        ExtLink: () => import('~/components/ExtLink.vue'),
-        Screenshot: () => import('~/components/Screenshot.vue')
-    }
-})
-export default class extends mixins(Page) {
-    @Prop(String) homepage!: string
-    @Prop(Array) screenshots!: Screenshot[]
-
-    swiper
-
-    swiperOption = {
-        pagination: {
-            el: '.swiper-pagination'
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev'
-        }
-    }
-
-    getScreenshotSrc(name) {
-        return require(`~/assets/projects/${this.lastUriSegment}/${name}.png`)
-    }
-
-    onPageKey(k: string){
-        switch(k)
-        {
-            case 'ArrowLeft':
-                if(this.screenshots)
-                    this.swiper.slidePrev()
-                return true
-
-            case 'ArrowRight':
-                if(this.screenshots)
-                    this.swiper.slideNext()
-                return true
-        }
-        return false
-    }
-
-    get summary() {
-        return this.menuItem.desc
-    }
-}
+const summary = computed(() => menuItem.value.desc)
 </script>
 
 <style scoped lang="scss">
-@import "style/inc";
+@import "~/assets/styles/inc.scss";
 
 .project {
     .project-meta {
@@ -142,7 +99,7 @@ export default class extends mixins(Page) {
         .swiper-pagination {
             position: static;
 
-            ::v-deep .swiper-pagination-bullet {
+            :deep(.swiper-pagination-bullet) {
                 background-color: $cyan;
                 opacity: 1;
                 border-radius: 0;
@@ -193,6 +150,21 @@ export default class extends mixins(Page) {
 
             @include js-disabled {
                 display: none;
+            }
+        }
+
+        .project-screenshot {
+            > img {
+                display: block;
+                max-width: 100%;
+                max-height: 35rem;
+                margin: 0 auto;
+            }
+
+            > label {
+                display: block;
+                text-align: center;
+                background: $yellow;
             }
         }
     }

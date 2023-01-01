@@ -1,5 +1,5 @@
 <template>
-<project
+<Project
     homepage="https://sourceforge.net/projects/mesoncast/"
     :screenshots="screenshots"
 >
@@ -38,28 +38,18 @@
 <p>
     To read the application manual, click the tray context menu and choose Help > Manual.
 </p>
-</project>
+</Project>
 </template>
 
-<script lang="ts">
-import {Component, Vue} from 'nuxt-property-decorator'
-import {Screenshot} from '~/components/Project.vue'
-
-@Component({
-    components: {
-        Project: () => import('~/components/Project.vue')
-    }
-})
-export default class extends Vue {
-    screenshots: Screenshot[] = [{
-        name: 'main',
-        label: 'Web GUI: Home'
-    }, {
-        name: 'list',
-        label: 'Web GUI: Playlist'
-    }, {
-        name: 'file',
-        label: 'Web GUI: File operations'
-    }]
-}
+<script setup lang="ts">
+const screenshots: Screenshot[] = [{
+    name: 'main',
+    label: 'Web GUI: Home'
+}, {
+    name: 'list',
+    label: 'Web GUI: Playlist'
+}, {
+    name: 'file',
+    label: 'Web GUI: File operations'
+}]
 </script>

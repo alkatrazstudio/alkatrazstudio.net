@@ -3,7 +3,7 @@
 @font-face {
     // https://zx-pk.ru/threads/14785-russkij-ttf-shrift-kak-na-spektrume.html?p=348597&viewfull=1#post348597
     font-family: "ZXSpectrum7";
-    src: url("../fonts/ZXSpectrum.ttf");
+    src: url("../fonts/ZXSpectrum.woff2");
     font-display: swap;
 }
 
@@ -14,10 +14,6 @@ html {
 body {
     background: $mainBg;
     color: $mainFg;
-}
-
-* {
-    box-sizing: border-box;
 }
 
 a {
@@ -40,11 +36,5 @@ ul {
 
     &.hooper-track {
         padding-left: 0;
-    }
-}
-
-@include js-disabled {
-    .js-visible {
-        display: none;
     }
 }

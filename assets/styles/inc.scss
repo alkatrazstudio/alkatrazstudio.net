@@ -43,6 +43,7 @@ $mainFg: $black;
 
 @mixin js-enabled {
     $parent: &;
+
     @at-root {
         html.js {
             @if $parent {
@@ -58,6 +59,7 @@ $mainFg: $black;
 
 @mixin js-disabled {
     $parent: &;
+
     @at-root {
         html:not(.js) {
             @if $parent {

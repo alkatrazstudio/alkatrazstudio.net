@@ -1,5 +1,5 @@
 <template>
-<project
+<Project
     homepage="https://gpufanmeister.alkatrazstudio.net"
     :screenshots="screenshots"
 >
@@ -19,14 +19,14 @@
     The functionality of GPU Fan Meister can be extended
     via scripts and custom functions from plugins.
     Read more about the scripting capabilities and custom functions in
-    <ext-link href="https://gpufanmeister.alkatrazstudio.net/doc/user/modes/script/reference.html#script-ref-dev-customfunction">the documentation</ext-link>.
+    <ExtLink href="https://gpufanmeister.alkatrazstudio.net/doc/user/modes/script/reference.html#script-ref-dev-customfunction">the documentation</ExtLink>.
     The process of adding plugins is also
-    <ext-link href="https://gpufanmeister.alkatrazstudio.net/doc/dev/plugins.html">documented</ext-link>.
+    <ExtLink href="https://gpufanmeister.alkatrazstudio.net/doc/dev/plugins.html">documented</ExtLink>.
 </p>
 <p>
     Currently, a plugin for NVIDIA video card is bundled with GPU Fan Meister.
     Read about this plugin
-    <ext-link href="https://gpufanmeister.alkatrazstudio.net/doc/user/plugins/nvidia-nvml.html">here</ext-link>.
+    <ExtLink href="https://gpufanmeister.alkatrazstudio.net/doc/user/plugins/nvidia-nvml.html">here</ExtLink>.
 </p>
 <p>
     The application uses QML for its GUI,
@@ -44,32 +44,21 @@
     for this application to work
     (but these are usually come preinstalled in any mainstream Linux distro).
 </p>
-</project>
+</Project>
 </template>
 
-<script lang="ts">
-import {Component, Vue} from 'nuxt-property-decorator'
-import {Screenshot} from '~/components/Project.vue'
-
-@Component({
-    components: {
-        Project: () => import('~/components/Project.vue'),
-        ExtLink: () => import('~/components/ExtLink.vue')
-    }
-})
-export default class extends Vue {
-    screenshots: Screenshot[] = [{
-        name: 'curve',
-        label: '"Curve" mode'
-    }, {
-        name: 'fanToggle',
-        label: '"Fan toggle" mode'
-    }, {
-        name: 'script',
-        label: '"Script" mode'
-    }, {
-        name: 'options',
-        label: 'Options screen'
-    }]
-}
+<script setup lang="ts">
+const screenshots: Screenshot[] = [{
+    name: 'curve',
+    label: '"Curve" mode'
+}, {
+    name: 'fanToggle',
+    label: '"Fan toggle" mode'
+}, {
+    name: 'script',
+    label: '"Script" mode'
+}, {
+    name: 'options',
+    label: 'Options screen'
+}]
 </script>

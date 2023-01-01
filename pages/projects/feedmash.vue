@@ -1,5 +1,5 @@
 <template>
-<project
+<Project
     homepage="https://github.com/alkatrazstudio/feedmash"
 >
 <p>
@@ -16,16 +16,5 @@
     the links to them are hidden and also require some post-processing to be properly displayed in a feed reader.
     FeedMash uses YouTube channel URLs to generate feed URLs, and then it does the needed processing automatically.
 </p>
-</project>
+</Project>
 </template>
-
-<script lang="ts">
-import {Component, Vue} from 'nuxt-property-decorator'
-
-@Component({
-    components: {
-        Project: () => import('~/components/Project.vue')
-    }
-})
-export default class extends Vue {}
-</script>

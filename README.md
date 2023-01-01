@@ -24,4 +24,9 @@ yarn local
 yarn dist
 ```
 
-The resulting build will be located in the /dist folder.
+The resulting build will be located in the `/dist` folder.
+
+
+## License
+
+[AGPLv3](COPYING)

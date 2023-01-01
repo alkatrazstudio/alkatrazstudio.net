@@ -1,5 +1,5 @@
 <template>
-<project
+<Project
     homepage="https://sourceforge.net/projects/radiosymba/"
     :screenshots="screenshots"
 >
@@ -15,7 +15,7 @@
 </p>
 <ul>
     <li>record an audio to a file</li>
-    <li>automatically start/stop a record when a specific stream title is found</li>
+    <li>automatically start/stop recording when a specific stream title is found</li>
     <li>pause a playback</li>
     <li>fast switching between favorite stations</li>
 </ul>
@@ -29,28 +29,18 @@
 <p>
     The bad thing is that only MP3 streams are supported.
 </p>
-</project>
+</Project>
 </template>
 
-<script lang="ts">
-import {Component, Vue} from 'nuxt-property-decorator'
-import {Screenshot} from '~/components/Project.vue'
-
-@Component({
-    components: {
-        Project: () => import('~/components/Project.vue')
-    }
-})
-export default class extends Vue {
-    screenshots: Screenshot[] = [{
-        name: 'main',
-        label: 'Main window'
-    }, {
-        name: 'options',
-        label: 'Options'
-    }, {
-        name: 'stations',
-        label: 'Stations list'
-    }]
-}
+<script setup lang="ts">
+const screenshots: Screenshot[] = [{
+    name: 'main',
+    label: 'Main window'
+}, {
+    name: 'options',
+    label: 'Options'
+}, {
+    name: 'stations',
+    label: 'Stations list'
+}]
 </script>

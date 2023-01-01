@@ -1,22 +1,22 @@
 <template>
 <div id="app">
     <div id="content">
-        <Nuxt/>
+        <slot />
     </div>
-    <div id="startup-bg"/>
+    <div id="startup-bg" />
 </div>
 </template>
 
-<script lang="ts">
-import {Component, Vue} from 'nuxt-property-decorator'
-
-@Component
-export default class extends Vue {
-}
+<script setup>
+useHead({
+    script: [
+        {children: "document.documentElement.classList.add('js')"}
+    ]
+})
 </script>
 
 <style scoped lang="scss">
-@import "style/inc";
+@import "~/assets/styles/inc.scss";
 
 @function spaces($start, $spacing...) {
     $g: '';

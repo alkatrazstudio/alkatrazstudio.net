@@ -1,5 +1,5 @@
 <template>
-<project
+<Project
     homepage="https://garage.maemo.org/projects/rhapsodie"
     :screenshots="screenshots"
 >
@@ -28,35 +28,24 @@
     one may experience some glitches when equalizer is enabled.
 </p>
 <p>
-    Also, note that app is available in extras-testing,
+    Also, note that the app is available in extras-testing,
     so you must add/enable this repository to install this package.
     Use one-click installer provided below.
     <img class="qr" src="~/assets/projects/rhapsodie/qr.png" alt="QR code"/><br>
-    or <ext-link href="/rhapsodie/rhapsodie.install">click here</ext-link>.
+    or <ExtLink href="/rhapsodie/rhapsodie.install">click here</ExtLink>.
 </p>
-</project>
+</Project>
 </template>
 
-<script lang="ts">
-import {Component, Vue} from 'nuxt-property-decorator'
-import {Screenshot} from '~/components/Project.vue'
-
-@Component({
-    components: {
-        Project: () => import('~/components/Project.vue'),
-        ExtLink: () => import('~/components/ExtLink.vue')
-    }
-})
-export default class extends Vue {
-    screenshots: Screenshot[] = [{
-        name: 'main',
-        label: 'Main screen'
-    }, {
-        name: 'options',
-        label: 'Options window'
-    }, {
-        name: 'main-white',
-        label: 'Main screen using a different skin'
-    }, ]
-}
+<script setup lang="ts">
+const screenshots: Screenshot[] = [{
+    name: 'main',
+    label: 'Main screen'
+}, {
+    name: 'options',
+    label: 'Options window'
+}, {
+    name: 'main-white',
+    label: 'Main screen using a different skin'
+}]
 </script>

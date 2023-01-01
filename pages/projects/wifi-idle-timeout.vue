@@ -1,5 +1,5 @@
 <template>
-<project
+<Project
     homepage="https://sourceforge.net/projects/wifiidletimeout/"
     :screenshots="screenshots"
 >
@@ -24,25 +24,14 @@
 <p>
     Google Play page:<br>
     <img class="qr" src="~/assets/projects/wifi-idle-timeout/qr.png" alt="QR code"/><br>
-    <ext-link href="https://play.google.com/store/apps/details?id=net.alkatrazstudio.wifiidletimeout"/>
+    <ExtLink href="https://play.google.com/store/apps/details?id=net.alkatrazstudio.wifiidletimeout"/>
 </p>
-</project>
+</Project>
 </template>
 
-<script lang="ts">
-import {Component, Vue} from 'nuxt-property-decorator'
-import {Screenshot} from '~/components/Project.vue'
-
-@Component({
-    components: {
-        Project: () => import('~/components/Project.vue'),
-        ExtLink: () => import('~/components/ExtLink.vue')
-    }
-})
-export default class extends Vue {
-    screenshots: Screenshot[] = [{
-        name: 'main',
-        label: 'Main screen'
-    }]
-}
+<script setup lang="ts">
+const screenshots: Screenshot[] = [{
+    name: 'main',
+    label: 'Main screen'
+}]
 </script>

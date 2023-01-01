@@ -11,19 +11,18 @@
 </span>
 </template>
 
-<script lang="ts">
-import {Component, Vue, Prop} from 'nuxt-property-decorator'
+<script setup lang="ts">
+const props = defineProps<{
+    scramble: string
+}>()
 
-@Component
-export default class extends Vue {
-    // email.split('').map((x, i) => String.fromCharCode(x.charCodeAt(0) + 2*(i%2) - 1)).join('')
-    @Prop(String) scramble!: string
+const email = ref('')
 
-    email = ''
-
-    reveal() {
-        this.email = this.scramble.split('').map((x, i) => String.fromCharCode(x.charCodeAt(0) - 2*(i%2) + 1)).join('')
-    }
+function reveal()
+{
+    email.value = props.scramble.split('').map(
+        (x, i) => String.fromCharCode(x.charCodeAt(0) - 2*(i%2) + 1)
+    ).join('')
 }
 </script>
 

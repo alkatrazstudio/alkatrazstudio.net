@@ -1,5 +1,5 @@
 <template>
-<project
+<Project
     :screenshots="screenshots"
 >
 <p>
@@ -14,27 +14,16 @@
     but only if the user has an access to a system events log of that computer.
 </p>
 <p>
-    <ext-link href="https://mega.nz/#!4Z8nBa7L!LzSpJzo12Pkals6UKBJ5SYptwbxfRMegfPjkhoL0nvc">
+    <ExtLink href="https://mega.nz/#!4Z8nBa7L!LzSpJzo12Pkals6UKBJ5SYptwbxfRMegfPjkhoL0nvc">
         Download the binary and the source code.
-    </ext-link>
+    </ExtLink>
 </p>
-</project>
+</Project>
 </template>
 
-<script lang="ts">
-import {Component, Vue} from 'nuxt-property-decorator'
-import {Screenshot} from '~/components/Project.vue'
-
-@Component({
-    components: {
-        Project: () => import('~/components/Project.vue'),
-        ExtLink: () => import('~/components/ExtLink.vue')
-    }
-})
-export default class extends Vue {
-    screenshots: Screenshot[] = [{
-        name: 'output',
-        label: "Program's output"
-    }]
-}
+<script setup lang="ts">
+const screenshots: Screenshot[] = [{
+    name: 'output',
+    label: "Program's output"
+}]
 </script>

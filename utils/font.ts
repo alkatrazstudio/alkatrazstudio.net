@@ -1,55 +1,43 @@
-import store from '~/utils/mainLocalStore'
+export enum FontId {
+    ZX = 'zx',
+    MONO = 'mono',
+    SANS = 'sans',
+    SERIF = 'serif'
+}
 
-interface Font {
-    id: string
+export interface Font {
+    id: FontId
     title: string
 }
 
-const fonts:Font[] = [{
-    id: 'zx',
+export const FONTS: Font[] = [{
+    id: FontId.ZX,
     title: 'Speccy'
 }, {
-    id: 'mono',
+    id: FontId.MONO,
     title: 'Monospace'
 }, {
-    id: 'sans',
+    id: FontId.SANS,
     title: 'Sans-Serif'
 }, {
-    id: 'serif',
+    id: FontId.SERIF,
     title: 'Serif'
 }]
 
-function getFont(fontId: string): Font
+export const defaultFont = FONTS[0]
+
+export function getFont(fontId: FontId): Font
 {
-    const font = fonts.find(f => f.id == fontId)
-    return font ? font : fonts[0]
+    const font = FONTS.find(f => f.id === fontId)
+    return font ? font : defaultFont
 }
 
-function getNextFontId(fontId: string): string
+export function nextMenuFontId(curId: FontId): FontId
 {
-    let i = fonts.findIndex(f => f.id == fontId)
-    i++
-    if(i >= fonts.length)
-        i = 0
-    return fonts[i].id
-}
-
-export function getMenuFont(): Font
-{
-    return getFont(store.menuFont)
-}
-
-export function setNextMenuFont()
-{
-    store.menuFont = getNextFontId(store.menuFont)
-}
-
-export function getArticleFont(): Font
-{
-    return getFont(store.articleFont)
-}
-
-export function setNextArticleFont()
-{
-    store.articleFont = getNextFontId(store.articleFont)
+    const curIndex = FONTS.findIndex(f => f.id === curId)
+    if(curIndex === -1)
+        return defaultFont.id
+    if(curIndex >= (FONTS.length - 1))
+        return FONTS[0].id
+    return FONTS[curIndex + 1].id;
 }

@@ -1,16 +1,16 @@
-import {Component, Vue} from 'nuxt-property-decorator'
+export type KbdHandler = (key: string) => boolean
 
-@Component
-export default class Kbd extends Vue {
-    kbdEvent?: (e: KeyboardEvent) => void
+export default class Kbd {
+    protected kbdEvent?: (e: KeyboardEvent) => void
+    protected handler: KbdHandler
 
-    onKbd(key: string): boolean {
-        return false
+    constructor(handler: KbdHandler) {
+        this.handler = handler
     }
 
-    mounted() {
+    init() {
         this.kbdEvent = (e: KeyboardEvent) => {
-            if(this.onKbd(e.code))
+            if(this.handler && this.handler(e.code))
             {
                 e.preventDefault();
                 e.stopPropagation()
@@ -19,7 +19,7 @@ export default class Kbd extends Vue {
         document.addEventListener('keydown', this.kbdEvent)
     }
 
-    destroyed() {
+    deinit() {
         if(this.kbdEvent)
             document.removeEventListener('keydown', this.kbdEvent)
     }

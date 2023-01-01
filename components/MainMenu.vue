@@ -1,5 +1,5 @@
 <template>
-<div id="main-menu" :class="`font-${font}`">
+<div id="main-menu" :class="`font-${menuFontId}`">
     <div id="menu-container">
         <header>
             <h1>{{ menuItem.title }}</h1>
@@ -12,29 +12,44 @@
         <nav>
             <ul ref="items">
                 <li v-for="(item, i) in realItems" :key="item.to">
-                    <nuxt-link
+                    <component
+                        v-if="typeof item.title !== 'string'"
+                        :is="item.title"
                         class="item"
-                        v-if="item.to"
-                        :key="item.to"
-                        :to="item.to"
-                        :class="{active: i == curIndex}"
-                        @focus.native="onFocus(i)"
-                        @blur.native="onBlur(i)"
-                        @mouseenter.native="hoveredIndex = i"
-                        @mouseleave.native="hoveredIndex = -1"
-                    >{{ item.title }}</nuxt-link>
-                    <a
-                        v-else
-                        class="item"
-                        :key="item.to"
-                        href="#"
                         :class="{active: i == curIndex}"
                         @focus="onFocus(i)"
-                        @blur="onBlur(i)"
+                        @blur="onBlur()"
                         @mouseenter="hoveredIndex = i"
-                        @mouseleave="hoveredIndex = -1"
-                        @click="item.click()"
-                    >{{ item.title }}</a>
+                        @mouseleave="hoveredIndex = -1"/>
+                    <template v-else>
+                        <NuxtLink
+                            class="item"
+                            v-if="item.to"
+                            :key="`NuxtLink-${item.title}`"
+                            :to="item.to"
+                            :class="{active: i == curIndex}"
+                            @focus.native="onFocus(i)"
+                            @blur.native="onBlur()"
+                            @mouseenter.native="hoveredIndex = i"
+                            @mouseleave.native="hoveredIndex = -1"
+                        >
+                            {{ item.title }}
+                        </NuxtLink>
+                        <a
+                            v-else
+                            class="item"
+                            :key="`link-${item.title}`"
+                            href="#"
+                            :class="{active: i == curIndex}"
+                            @focus="onFocus(i)"
+                            @blur="onBlur()"
+                            @mouseenter="hoveredIndex = i"
+                            @mouseleave="hoveredIndex = -1"
+                            @click="item.click && item.click()"
+                        >
+                            {{ item.title }}
+                        </a>
+                    </template>
                 </li>
             </ul>
         </nav>
@@ -44,101 +59,94 @@
 </div>
 </template>
 
-<script lang="ts">
-import {Component, Prop, namespace, mixins} from 'nuxt-property-decorator'
-import Page from '~/mixins/page'
-import {getMenuFont} from '~/utils/font'
+<script setup lang="ts">
+const curIndex = ref(-1)
+const hoveredIndex = ref(-1)
+const focusedIndex = ref(-1)
 
-const store = namespace('main')
+const items = ref(null)
+const router = useRouter()
 
-@Component
-export default class extends mixins(Page) {
-    @store.State fromPath
+const menuFontId = useMenuFontId()
 
-    curIndex = -1
-    hoveredIndex = -1
-    focusedIndex = -1
+const menuItem = useMenuItem()
+const parentPath = useParentPath(menuItem)
 
-    updateFocus(i: number) {
-        const ul = this.$refs.items as HTMLElement
-        const li = ul.children[i] as HTMLElement
-        const link = li.children[0] as HTMLElement
-        link.focus()
-        this.curIndex = i // in case the focus is not set
-    }
 
-    onFocus(i: number) {
-        this.focusedIndex = i
-        this.curIndex = i
-    }
-
-    onBlur(i: number) {
-        this.focusedIndex = -1
-    }
-
-    get realItems() {
-        const items = this.menuItem.children || []
-        if(!this.parentPath)
-            return items
-        const hasJS = process.client ? document.documentElement.classList.contains('js') : false
-        return [{
-            to: this.parentPath,
-            title: '(back)',
-            desc: 'Return back (backspace key)'
-        }, ...items]
-    }
-
-    get label() {
-        if(this.hoveredIndex != -1)
-            return this.realItems[this.hoveredIndex].desc
-        if(this.curIndex != -1)
-            return this.realItems[this.curIndex].desc
-        return ''
-    }
-
-    onPageKey(key) {
-        switch(key)
-        {
-            case 'ArrowUp':
-                if(this.curIndex > 0)
-                    this.updateFocus(this.curIndex - 1)
-                else
-                    this.updateFocus(this.realItems.length - 1)
-                return true
-
-            case 'ArrowDown':
-                if(this.curIndex < (this.realItems.length - 1))
-                    this.updateFocus(this.curIndex + 1)
-                else
-                    this.updateFocus(0)
-                return true
-
-            case 'Enter':
-                if(this.focusedIndex == -1 && this.curIndex != -1 && this.realItems[this.curIndex].to)
-                {
-                    this.$router.push(this.realItems[this.curIndex].to!)
-                    return true
-                }
-                break
-        }
-        return false
-    }
-
-    get font(): string {
-        return getMenuFont().id
-    }
-
-    mounted() {
-        let i = this.realItems.findIndex(i => i.to == this.fromPath)
-        if(i == -1)
-            i = 0
-        this.updateFocus(i)
-    }
+function updateFocus(i: number) {
+    const ul = items.value as HTMLElement|null
+    const li = ul?.children[i] as HTMLElement|null
+    const link = li?.children[0] as HTMLElement|null
+    link?.focus()
+    curIndex.value = i // in case the focus is not set
 }
+
+function onFocus(i: number) {
+    focusedIndex.value = i
+    curIndex.value = i
+}
+
+function onBlur() {
+    focusedIndex.value = -1
+}
+
+const realItems = computed(() => {
+    const items = menuItem.value.children || []
+    if(!parentPath.value)
+        return items
+    return [{
+        to: parentPath.value,
+        title: '(back)',
+        desc: 'Return back (backspace key)'
+    }, ...items]
+})
+
+const label = computed(() => {
+    if(hoveredIndex.value != -1)
+        return realItems.value[hoveredIndex.value].desc
+    if(curIndex.value != -1)
+        return realItems.value[curIndex.value].desc
+    return ''
+})
+
+usePageKbd(parentPath, key => {
+    switch(key)
+    {
+        case 'ArrowUp':
+            if(curIndex.value > 0)
+                updateFocus(curIndex.value - 1)
+            else
+                updateFocus(realItems.value.length - 1)
+            return true
+
+        case 'ArrowDown':
+            if(curIndex.value < (realItems.value.length - 1))
+                updateFocus(curIndex.value + 1)
+            else
+                updateFocus(0)
+            return true
+
+        case 'Enter':
+            if(focusedIndex.value == -1 && curIndex.value != -1 && realItems.value[curIndex.value].to)
+            {
+                router.push(realItems.value[curIndex.value].to!)
+                return true
+            }
+            break
+    }
+    return false
+})
+
+onMounted(() => {
+    let i = realItems.value.findIndex(i => i.to == useFromPath().value)
+    if(i == -1)
+        i = 0
+    updateFocus(i)
+})
 </script>
 
 <style scoped lang="scss">
-@import "style/inc";
+@import "~/assets/styles/inc.scss";
 
 $itemsBg: $whiteBright;
 $activeItemBg: $cyanBright;
@@ -164,7 +172,7 @@ $hoveredItemBg: $cyan;
         > header {
             display: flex;
             background: $black;
-            padding-left: 2px solid $black;
+            border-left: 2px solid $black;
 
             h1 {
                 font-size: 1rem;
@@ -216,6 +224,7 @@ $hoveredItemBg: $cyan;
                 text-decoration: none;
                 color: $mainFg;
                 outline: none;
+                width: 27ch;
 
                 &.active,
                 &:focus {
@@ -233,6 +242,7 @@ $hoveredItemBg: $cyan;
         display: block;
         height: 4rem;
         text-align: center;
+        white-space: pre-wrap;
     }
 }
 </style>
