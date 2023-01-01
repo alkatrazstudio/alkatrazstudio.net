@@ -3,6 +3,10 @@ import ArticleFontSetting from '~/components/ArticleFontSetting.vue'
 import { MenuItem } from './menu'
 
 const activeProjects = [{
+    to: '/projects/konik',
+    title: 'Konik',
+    desc: 'Music player controlled by global hotkeys'
+},{
     to: '/projects/humanpwd',
     title: 'humanpwd',
     desc: 'Generate strong passwords that are easy to remember '
@@ -26,29 +30,29 @@ const activeProjects = [{
     to: '/projects/previous-colors',
     title: 'Previous Colors',
     desc: ' Quickly choose from previously used colors in Thunderbird'
-}, {
-    to: '/projects/gpu-fan-meister',
-    title: 'GPU Fan Meister',
-    desc: ' Control your video card fan speed with simple and/or advanced methods'
-}, {
-    to: '/projects/meson-player',
-    title: 'Meson Player',
-    desc: 'Music player with no GUI, controlled only by global hotkeys '
-}, {
-    to: '/projects/basszxtune',
-    title: 'BASSZXTUNE',
-    desc: 'Chiptune support for BASS audio library'
-}, {
-    to: '/projects/xmpzxtune',
-    title: 'XMPZXTUNE',
-    desc: 'Chiptune support for XMPlay'
-}, {
-    to: '/projects/gottext',
-    title: 'GotText',
-    desc: ' Translation engine for PHP with features of gettext'
 }]
 
 const archivedProjects: MenuItem[] = [{
+    to: '/projects/meson-player', // Jul 31, 2021
+    title: 'Meson Player',
+    desc: 'Music player with no GUI, controlled only by global hotkeys '
+}, {
+    to: '/projects/gpu-fan-meister', // May 23, 2021
+    title: 'GPU Fan Meister',
+    desc: ' Control your video card fan speed with simple and/or advanced methods'
+}, {
+    to: '/projects/gottext', // Sep 27, 2020
+    title: 'GotText',
+    desc: ' Translation engine for PHP with features of gettext'
+}, {
+    to: '/projects/basszxtune', // 23 Aug, 2020
+    title: 'BASSZXTUNE',
+    desc: 'Chiptune support for BASS audio library'
+}, {
+    to: '/projects/xmpzxtune', // 23 Aug, 2020
+    title: 'XMPZXTUNE',
+    desc: 'Chiptune support for XMPlay'
+}, {
     to: '/projects/wifi-idle-timeout', // Sep 21, 2014
     title: 'Wi-Fi Idle Timeout',
     desc: ' Auto-disable Android Wi-Fi when unused'

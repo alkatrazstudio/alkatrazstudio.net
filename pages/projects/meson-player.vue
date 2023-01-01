@@ -4,6 +4,11 @@
     :screenshots="screenshots"
 >
 <p>
+    <strong>ATTENTION:</strong>
+    this project had been superseded by
+    <NuxtLink to="/projects/konik">Konik</NuxtLink>!
+</p>
+<p>
     Meson Player is a music player with almost no GUI (except tooltips and tray context menu).
     It's perfect when you don't need any fancy flashy GUI to control a playback
     yet you need a tray icon and popup messages
