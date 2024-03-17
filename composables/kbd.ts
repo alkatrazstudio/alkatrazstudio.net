@@ -1,5 +1,5 @@
-import { Ref } from 'vue'
-import Kbd, { KbdHandler } from '~/utils/kbd'
+import type { Ref } from 'vue'
+import Kbd, { type KbdHandler } from '~/utils/kbd'
 
 export function usePageKbd(parentPath: Ref<string|null>, handler?: KbdHandler) {
     const kbd = new Kbd(key => {

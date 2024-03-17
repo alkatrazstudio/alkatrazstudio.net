@@ -1,5 +1,5 @@
-import { Ref } from 'vue'
-import { MenuItem } from '~/utils/menu'
+import type { Ref } from 'vue'
+import type { MenuItem } from '~/utils/menu'
 
 function findItem(item: MenuItem, f: (i: MenuItem) => boolean): MenuItem|null {
     if(f(item))

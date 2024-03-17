@@ -1,15 +1,19 @@
 import MenuFontSetting from '~/components/MenuFontSetting.vue'
 import ArticleFontSetting from '~/components/ArticleFontSetting.vue'
-import { MenuItem } from './menu'
+import type { MenuItem } from './menu'
 
 const activeProjects = [{
+    to: '/projects/grablog',
+    title: 'GrabLog',
+    desc: 'Quickly view changelogs for packages '
+}, {
     to: '/projects/konik',
     title: 'Konik',
     desc: 'Music player controlled by global hotkeys'
 },{
     to: '/projects/humanpwd',
     title: 'humanpwd',
-    desc: 'Generate strong passwords that are easy to remember '
+    desc: 'Generate strong passwords that are easy to remember'
 }, {
     to: '/projects/neodim',
     title: 'Neodim',
