@@ -3,6 +3,10 @@ import ArticleFontSetting from '~/components/ArticleFontSetting.vue'
 import type { MenuItem } from './menu'
 
 const activeProjects = [{
+    to: '/projects/polarmon',
+    title: 'PolarMon',
+    desc: 'Display HR and ECG from Polar H10'
+}, {
     to: '/projects/grablog',
     title: 'GrabLog',
     desc: 'Quickly view changelogs for packages '
