@@ -29,11 +29,10 @@ export default defineNuxtConfig({
     },
 
     modules: ['nuxt-swiper'],
-    swiper: {
-        modules: ['navigation', 'pagination', 'keyboard']
-    },
 
     experimental: {
         payloadExtraction: false
-    }
+    },
+
+    compatibilityDate: '2024-12-28'
 })

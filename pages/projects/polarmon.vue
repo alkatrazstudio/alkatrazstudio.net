@@ -15,14 +15,14 @@
 </p>
 <p>
     Features:
-    <ul>
-        <li>Show heart rate (HR) in real time with the resolution of 1 sample per second.</li>
-        <li>Show electrocardiogram (ECG) in real time with the resolution of 130 samples per second.</li>
-        <li>Record HR graph in background (the app may be closed meanwhile).</li>
-        <li>Manage and analyze the saved recordings.</li>
-        <li>Place markers on the graph during recording.</li>
-    </ul>
 </p>
+<ul>
+    <li>Show heart rate (HR) in real time with the resolution of 1 sample per second.</li>
+    <li>Show electrocardiogram (ECG) in real time with the resolution of 130 samples per second.</li>
+    <li>Record HR graph in background (the app may be closed meanwhile).</li>
+    <li>Manage and analyze the saved recordings.</li>
+    <li>Place markers on the graph during recording.</li>
+</ul>
 <p>
     More current info in the repository.
 </p>

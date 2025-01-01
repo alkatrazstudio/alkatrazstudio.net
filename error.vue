@@ -59,7 +59,7 @@ if(process.client)
 </script>
 
 <style scoped lang="scss">
-@import "~/assets/styles/inc.scss";
+@use "~/assets/styles/inc.scss" as *;
 
 @keyframes flash {
     from {

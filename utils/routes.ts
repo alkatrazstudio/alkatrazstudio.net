@@ -19,9 +19,9 @@ const activeProjects = [{
     title: 'humanpwd',
     desc: 'Generate strong passwords that are easy to remember'
 }, {
-    to: '/projects/neodim',
-    title: 'Neodim',
-    desc: 'Set of applications for natural text generation'
+    to: '/projects/neodim-chat',
+    title: 'Neodim Chat',
+    desc: 'Chit-chat with AI'
 }, {
     to: '/projects/sonuspresto',
     title: 'SonusPresto',
@@ -40,7 +40,11 @@ const activeProjects = [{
     desc: ' Quickly choose from previously used colors in Thunderbird'
 }]
 
-const archivedProjects: MenuItem[] = [{
+const archivedProjects: MenuItem[] = [ {
+    to: '/projects/neodim-server', // Sep 13, 2023
+    title: 'Neodim Server',
+    desc: 'Natural language model AI via HTTP'
+}, {
     to: '/projects/meson-player', // Jul 31, 2021
     title: 'Meson Player',
     desc: 'Music player with no GUI, controlled only by global hotkeys '

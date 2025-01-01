@@ -16,7 +16,7 @@ useHead({
 </script>
 
 <style scoped lang="scss">
-@import "~/assets/styles/inc.scss";
+@use "~/assets/styles/inc.scss" as *;
 
 @function spaces($start, $spacing...) {
     $g: '';
