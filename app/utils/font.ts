@@ -24,7 +24,7 @@ export const FONTS: Font[] = [{
     title: 'Serif'
 }]
 
-export const defaultFont = FONTS[0]
+export const defaultFont = FONTS[0]!
 
 export function getFont(fontId: FontId): Font
 {
@@ -38,6 +38,6 @@ export function nextMenuFontId(curId: FontId): FontId
     if(curIndex === -1)
         return defaultFont.id
     if(curIndex >= (FONTS.length - 1))
-        return FONTS[0].id
-    return FONTS[curIndex + 1].id;
+        return FONTS[0]!.id
+    return FONTS[curIndex + 1]!.id;
 }

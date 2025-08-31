@@ -2,11 +2,12 @@
 export default defineNuxtConfig({
     typescript: {
         shim: false,
-        strict: true
+        strict: true,
+        typeCheck: true
     },
 
     css: [
-        '~/node_modules/modern-normalize/modern-normalize.css',
+        'modern-normalize/modern-normalize.css',
         '~/assets/styles/base.scss'
     ],
 
@@ -19,7 +20,7 @@ export default defineNuxtConfig({
             meta: [
                 {charset: 'utf-8'},
                 {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-                {hid: 'description', name: 'description', content: 'Alkatraz Studio homepage'}
+                {name: 'description', content: 'Alkatraz Studio homepage'}
             ],
 
             link: [
@@ -34,5 +35,8 @@ export default defineNuxtConfig({
         payloadExtraction: false
     },
 
-    compatibilityDate: '2024-12-28'
+    compatibilityDate: '2024-12-28',
+    telemetry: {
+        enabled: false
+    }
 })

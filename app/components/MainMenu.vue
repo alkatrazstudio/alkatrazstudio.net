@@ -103,9 +103,9 @@ const realItems = computed(() => {
 
 const label = computed(() => {
     if(hoveredIndex.value != -1)
-        return realItems.value[hoveredIndex.value].desc
+        return realItems.value[hoveredIndex.value]?.desc ?? ''
     if(curIndex.value != -1)
-        return realItems.value[curIndex.value].desc
+        return realItems.value[curIndex.value]?.desc ?? ''
     return ''
 })
 
@@ -127,10 +127,14 @@ usePageKbd(parentPath, key => {
             return true
 
         case 'Enter':
-            if(focusedIndex.value == -1 && curIndex.value != -1 && realItems.value[curIndex.value].to)
+            if(focusedIndex.value == -1 && curIndex.value != -1)
             {
-                router.push(realItems.value[curIndex.value].to!)
-                return true
+                const route = realItems.value[curIndex.value]
+                if(route?.to)
+                {
+                    router.push(route.to!)
+                    return true
+                }
             }
             break
     }

@@ -8,7 +8,7 @@ function findItem(item: MenuItem, f: (i: MenuItem) => boolean): MenuItem|null {
     {
         for(let a=0; a<item.children.length; a++)
         {
-            const found = findItem(item.children[a], f)
+            const found = findItem(item.children[a]!, f)
             if(found)
                 return found
         }

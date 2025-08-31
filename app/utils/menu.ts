@@ -11,5 +11,5 @@ export interface MenuItem {
 
 export function lastUriSegment(menuItem: MenuItem): string {
     const segments = menuItem.to!.split('/')
-    return segments[segments.length - 1]
+    return segments[segments.length - 1]!
 }
