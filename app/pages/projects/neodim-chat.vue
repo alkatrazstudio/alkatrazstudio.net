@@ -24,8 +24,8 @@
 <p>
     The project requires an external AI server.
     In the beginning, Neodim Chat used <NuxtLink to="/projects/neodim-server">Neodim Server</NuxtLink>
-    (hence the name), but that server is no longer maintained.
-    Currently, Neodim Chat can use <ExtLink href="https://github.com/ggerganov/llama.cpp">llama.cpp</ExtLink>.
+    (hence the name), but that server is no longer maintained, so the support for Neodim Server was removed.
+    Currently, Neodim Chat can use <ExtLink href="https://github.com/ggml-org/llama.cpp">llama.cpp</ExtLink>.
 </p>
 </Project>
 </template>
